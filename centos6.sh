@@ -4,10 +4,6 @@
 # initialisasi var
 OS=`uname -p`;
 
-# data pemilik server
-read -p "Nama pemilik server: " namap
-read -p "Nomor HP atau Email pemilik server: " nhp
-read -p "Masukkan username untuk akun default: " dname
 
 # ubah hostname
 echo "Hostname Anda saat ini $HOSTNAME"
@@ -18,21 +14,6 @@ echo "Hostname telah diganti menjadi $hnbaru"
 read -p "Maks login user (contoh 1 atau 2): " llimit
 echo "Proses instalasi script dimulai....."
 
-# Banner SSH
-echo "=== Hallo Gan Selamat Menggunakan SSH SEMUT $hnbaru == " >> /etc/pesan
-echo "DENGAN MENGGUNAKAN LAYANAN SSH DARI SERVER INI BERARTI ANDA SETUJU SEGALA KETENTUAN YANG TELAH KAMI BUAT: " >> /etc/pesan
-echo "<br>"
-echo "1. Tidak diperbolehkan untuk melakukan aktivitas illegal seperti DDoS, Hacking, Phising, Spam, dan Torrent di server ini; " >> /etc/pesan
-echo "<br>"
-echo "2. Maks login $llimit kali, jika lebih dari itu maka akun otomatis ditendang oleh server; " >> /etc/pesan
-echo "<br>"
-echo "<br>3. Pengguna setuju jika kami mengetahui atau sistem mendeteksi pelanggaran di akunnya maka akun akan dihapus oleh sistem; " >> /etc/pesan
-echo "<br>"
-echo "<br>4. Tidak ada tolerasi bagi pengguna yang melakukan pelanggaran; " >> /etc/pesan
-echo "<br>"
-echo "<b>Server by $namap ( $nhp )" >> /etc/pesan
-
-echo "Banner /etc/pesan" >> /etc/ssh/sshd_config
 
 # update software server
 yum update -y
